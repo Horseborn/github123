@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Adjektiv fortelling</title>
+    <style>
+      body {
+        background-color: rgb(177, 208, 212);
+      }
+
+      div.Historie {
+        height: 100px;
+        width: 400px;
+        border: 2px solid black;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 125%;
+      }
+
+      div.Ordene {
+        height: 200px;
+        width: 400px;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: row;
+
+        gap: 10px;
+      }
+
+      .box {
+        border: 2px solid black;
+      }
+
+      .button1 {
+        background-image: url(https://qph.fs.quoracdn.net/main-qimg-ae92b32bf2255fc758cf0ea8e4b76b18-c);
+        float: right;
+        width: 75px;
+        height: 75px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgb(177, 208, 212);
+      }
+
+      .clip-text {
+        background: url(https://i.giphy.com/3o7aD9y2CKtGHRfhOE.gif);
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        width: 3000px;
+        height: 100px;
+
+        font-size: 58px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 100px;
+        flex-shrink: 0;
+      }
+      .container {
+        text-align: center;
+        position: relative;
+        right: 975px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="info"></div>
+
+    <script>
+      // model
+      var erase1 = "________";
+      var erase2 = "________";
+      var erase3 = "________";
+      var erase4 = "________";
+
+      var myArray1 = [
+        "heftig",
+        "bred",
+        "ulykkelig",
+        "gravid",
+        "ensom",
+        "følsom",
+        "søt",
+      ];
+      var randomOrd1 = myArray1[Math.floor(Math.random() * myArray1.length)];
+
+      var myArray2 = [
+        "fryktelig",
+        "hemmelig",
+        "langsom",
+        "ekkel",
+        "barnevennlig",
+        "arealeffektiv",
+        "heslig",
+      ];
+      var randomOrd2 = myArray2[Math.floor(Math.random() * myArray2.length)];
+      var myArray3 = [
+        "dumme",
+        "store",
+        "svarte",
+        "falske",
+        "enorme",
+        "mørke",
+        "fordømte",
+      ];
+      var randomOrd3 = myArray3[Math.floor(Math.random() * myArray3.length)];
+
+      var myArray4 = [
+        "kjempestort",
+        "berømt",
+        "ekte",
+        "følsomt",
+        "ferskt",
+        "imponerende",
+        "lite",
+        "kult",
+        "kosteffektivt",
+      ];
+      var randomOrd4 = myArray4[Math.floor(Math.random() * myArray4.length)];
+
+      // view
+      Show();
+      function Show() {
+        document.getElementById("info").innerHTML = `
+        <div class="container">
+      <div class="clip-text">Velkommen til team 3's adjektiv fortelling!</div>
+    </div>
+        <h1>Prøv å endre historien hvis du tør</h1>
+        <div class="Historie">
+                Det var en gang en ${erase1} mann.</br> Han skulle gå en ${erase2} tur. </br> 
+                Da han kom til det ${erase3} treet,</br> møtte han på et ${erase4} ekorn. </div>
+                </br>
+                <div class= "Ordene">
+                <div>
+                    <div class="box" onclick ="clickme1()"   value="løs" >${randomOrd1}</div>
+                </div>
+                <div>
+                    <div class="box" onclick ="clickme2()"  value="fast">${randomOrd2}</div>
+                </div>
+                <div>
+                    <div class="box" onclick="clickme3()" value="grønn">${randomOrd3}</div>
+                </div>
+                <div>
+                    <div class="box" onclick ="clickme4()" value="stor">${randomOrd4}</div>
+                </div>
+                <button class="button1" onClick="window.location.reload();"></button>
+                </div>    
+            `;
+      }
+
+      // controller
+
+      function clickme1() {
+        erase1 = randomOrd1;
+
+        Show();
+      }
+      function clickme2() {
+        erase2 = randomOrd2;
+
+        Show();
+      }
+      function clickme3() {
+        erase3 = randomOrd3;
+
+        Show();
+      }
+      function clickme4() {
+        erase4 = randomOrd4;
+
+        Show();
+      }
+    </script>
+  </body>
+</html>
